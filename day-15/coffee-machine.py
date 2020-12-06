@@ -98,6 +98,8 @@ def coffee_machine(resources):
     choice = (input("What would you like? (espresso/latte/cappuccino): ")).lower()
     if choice == "report":
         report(resources)
+    elif choice == "off":
+        return "off"
     else:
         drink = MENU[choice]
         result, change = process_coins(choice, drink)
@@ -111,5 +113,5 @@ def coffee_machine(resources):
     return resources
 
 
-while True:    
+while resources!= "off":    
     resources = coffee_machine(resources)
