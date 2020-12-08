@@ -18,7 +18,7 @@ END_X = 300
 END_Y = 300
 screen = t.Screen()
 t.colormode(255) # pylint: disable=no-member
-def draw_dot_line(dot_size, forward_dist, cursor):
+def draw_dot_line(dot_size, forward_dist):
     global color_list
     while cursor.pos()[0] < END_X:
         cursor.dot(dot_size, random.choice(color_list))
@@ -26,13 +26,13 @@ def draw_dot_line(dot_size, forward_dist, cursor):
             cursor.forward(forward_dist)
     return cursor
 
-def reset_at_new_line (cursor):
+def reset_at_new_line ():
     cursor.setpos(START_X,cursor.pos()[1])
     return cursor
 
-def next_line(up_dist, cursor):
+def next_line(up_dist):
     cursor.setpos(cursor.pos()[0],cursor.pos()[1]+up_dist)
-    reset_at_new_line (cursor)
+    reset_at_new_line ()
     return cursor
         
 cursor = t.Turtle()
@@ -49,7 +49,7 @@ fwr_dist = width / num_dot
 up_dist = height / num_dot
 
 while cursor.pos()[1] < END_Y:
-    cursor = draw_dot_line(dot_size,fwr_dist,cursor)
-    cursor = next_line(up_dist, cursor)
+    cursor = draw_dot_line(dot_size,fwr_dist)
+    cursor = next_line(up_dist)
     
 screen.exitonclick()
