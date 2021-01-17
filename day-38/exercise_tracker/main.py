@@ -34,9 +34,9 @@ data = response.json()
 
 
 sheetty_npt = "https://api.sheety.co/ba5d13a527b6b1b1e451f0ca98c50390/workoutsTracking/workouts"
-
+sheety_token = cred_data["sheety"]["token"]
 headers = {
-    "Authorization": "Bearer 57vc5hd7hyy5eh76yqu8qvgdke293fnv",
+    "Authorization": f"Bearer {sheety_token}",
     "Content-Type": "application/json"
 }
 
