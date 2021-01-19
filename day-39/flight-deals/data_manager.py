@@ -17,14 +17,13 @@ class DataManager:
         self.kiwi_headers = {
             "apikey":kiwi_api_key
         }
-        self.get_data()
+        self.data=self.get_data()
         self.update_iataCode()
     
     def get_data(self):
         response = requests.get(url=self.sheety_endpoint,headers=self.sheety_headers)
         response.raise_for_status()  
-        self.data = response.json()['prices']      
-        return self.data
+        return response.json()['prices']
     
     def update_iataCode(self):
         new_data = self.data
@@ -32,11 +31,10 @@ class DataManager:
             if not d['iataCode']:
                 print(d['city'])
                 d.update({"iataCode": self.find_city_id(d['city'])})
-        self.get_data()
         for d in new_data:
             if d not in self.data:
                 self.update_row(d)
-        self.get_data()
+        self.data=self.get_data()
     
     def update_row(self,d):
         body = {
