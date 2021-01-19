@@ -34,7 +34,7 @@ class DataManager:
         for d in new_data:
             if d not in self.data:
                 self.update_row(d)
-        self.data=self.get_data()
+        self.data=new_data
     
     def update_row(self,d):
         body = {
