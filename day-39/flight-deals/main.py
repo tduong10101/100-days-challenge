@@ -4,8 +4,5 @@ import data_manager, flight_data
 dm = data_manager.DataManager()
 data = dm.get_data()
 
-fd = flight_data.FlightData(data)
 
-dm.update_data(fd.data)
-
-print(fd.data)
+print(dm.data)
