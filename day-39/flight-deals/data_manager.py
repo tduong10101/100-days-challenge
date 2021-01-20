@@ -26,15 +26,10 @@ class DataManager:
         return response.json()['prices']
     
     def update_iataCode(self):
-        new_data = self.data
-        for d in new_data:
+        for d in self.data:
             if not d['iataCode']:
-                print(d['city'])
                 d.update({"iataCode": self.find_city_id(d['city'])})
-        for d in new_data:
-            if d not in self.data:
                 self.update_row(d)
-        self.data=new_data
     
     def update_row(self,d):
         body = {

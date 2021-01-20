@@ -4,8 +4,6 @@ import data_manager, flight_data,flight_search,json
 dm = data_manager.DataManager()
 data = dm.get_data()
 print(data)
-fs = flight_search.FlightSearch(from_city="LON",dm=dm)
-sample = fs.get_flight()
-
-with open("sample.json","w") as f:
-    f.write(json.dumps(sample,indent=4))
+fs = flight_search.FlightSearch(max_stay=28,min_stay=7,currency="AUD")
+for d in data:
+    sample = fs.get_flight(from_city="MEL",to_city=d['iataCode'],lowest_price=d['lowestPrice'])
