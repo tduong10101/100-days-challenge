@@ -5,6 +5,8 @@ import spotipy
 from spotipy.oauth2 import SpotifyClientCredentials
 from spotipy.oauth2 import SpotifyOAuth
 import json
+from sys import exit
+
 
 with open("cred.json","r") as f:
     content = f.read()
@@ -16,10 +18,15 @@ USER = 'xwjt66crzen3f6twyrwr15yei'
 
 while True:
     try:
-        date = input("Input date in format yyyy-mm-dd: ")
-        datetime.datetime.strptime(date, '%Y-%m-%d')
+        date = input("Input date in format yyyy-mm-dd (type 'q' to quit): ")
+        
+        if date == "q":
+            exit()
+        else:
+            datetime.datetime.strptime(date, '%Y-%m-%d')
         break
-    except:
+    except Exception as e: 
+        print(e)
         print('Invalid date! Please input date in format yyyy-mm-dd')
 # date = "2013-12-31"
 
@@ -39,7 +46,7 @@ auth_manager = SpotifyClientCredentials(CLIENT_ID, CLIENT_SECRET)
 sp = spotipy.Spotify( 
         auth_manager=SpotifyOAuth(
         scope="playlist-modify-private",
-        redirect_uri="https://blog.tdinvoke.net",
+        redirect_uri="https://blog.tdinvoke.net/",
         client_id=CLIENT_ID,
         client_secret= CLIENT_SECRET,
         show_dialog=True,
