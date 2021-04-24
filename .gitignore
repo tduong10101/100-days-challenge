@@ -1,3 +1,5 @@
 __pycache__
 *cred.json
 *token*
+*.vscode*
+*venv*
