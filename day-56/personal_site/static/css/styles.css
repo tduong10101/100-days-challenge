@@ -1,0 +1,142 @@
+html {
+    height: 100%;
+}
+body {
+    margin:0;
+    text-align:center;
+    font-family: 'Source Code Pro', monospace;
+    height: 100%;
+}
+
+h1 {
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    padding-top: 25px;
+    text-align: center;
+    font-size: 5.625rem;
+    margin: 50px auto 0 auto;
+    font-family: 'Satisfy', cursive;
+    color: #66BFBF;
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-top: 0;
+    color: #66BFBF;
+    font-weight: normal;
+    line-height: 2;
+}
+
+.subtitle {
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    padding-top: 175px;
+    text-align: center;
+}
+
+h3 {
+    font-size: 1.5rem;
+    color: #66BFBF;
+}
+.top-container {
+    background-color: #e4f9f5;
+    position: relative;
+    padding-top: 100px;
+    height: 100%;
+}
+.mid-container {
+}
+.bottom-cloud{
+    position: absolute;
+    left:300px;
+    bottom:500px;
+}
+.bottom-container {
+    background-color: #66BFBF;
+    padding: 50px;
+    margin: 100px auto 0 auto;
+    color: #EAF6F6;
+}
+.top-cloud{
+    position: absolute;
+    right: 300px;
+    top:50px;
+}
+
+.round-img {
+    border-radius: 50%;
+}
+
+.mountain{
+    margin: auto;
+    position: absolute;
+    left: 0; 
+    bottom: 0; 
+    right: 0;
+    width: 80%;
+}
+
+.skill-row{
+    width: 50%;
+    margin: 100px auto 100px auto;
+    text-align: left;
+    line-height: 2;
+}
+
+.script{
+    width: 25%;
+    float: left;
+    margin-right: 30px;
+}
+
+.aws-logo{
+    width: 25%;
+    float: right;
+    margin-left: 30px;
+}
+.profile{
+    width: 50%;
+    margin: 100px auto 100px auto;
+    line-height: 2;
+}
+
+hr {
+    border: 0;
+    border-top: 10px dotted;
+    width: 4%;
+    border-color: #EAF6F6;
+}
+
+.footer-link{
+    color:#11999E;
+    font-weight:bold;
+    text-decoration: none;
+
+}
+
+.btn {
+    background: #77EFEF;
+    background-image: -webkit-linear-gradient(top, #77EFEF, #447676);
+    background-image: -moz-linear-gradient(top, #77EFEF, #447676);
+    background-image: -ms-linear-gradient(top, #77EFEF, #447676);
+    background-image: -o-linear-gradient(top, #77EFEF, #447676);
+    background-image: -webkit-gradient(to bottom, #77EFEF, #447676);
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+    color: #FFFFFF;
+    font-family: Arial;
+    font-size: 16px;
+    font-weight: 100;
+    padding: 20px 40px;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    text-align: center;
+}
